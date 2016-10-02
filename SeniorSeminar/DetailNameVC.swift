@@ -1,20 +1,19 @@
 //
-//  ViewController.swift
+//  DetailNameVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 9/17/16.
+//  Created by Julia Waggoner on 10/1/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController{
+class DetailNameVC: UIViewController {
 
-
+    var name: Name!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
 }
-
