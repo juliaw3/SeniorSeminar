@@ -17,10 +17,10 @@
 		5F3721961D9FFF0F005CBDF4 /* IndustryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3721951D9FFF0F005CBDF4 /* IndustryCell.swift */; };
 		5F3721981D9FFF30005CBDF4 /* IndustryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3721971D9FFF30005CBDF4 /* IndustryViewController.swift */; };
 		5F37219A1DA08EBC005CBDF4 /* DetailNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3721991DA08EBB005CBDF4 /* DetailNameVC.swift */; };
+		5F3D07DC1DA5DA75005C1975 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07DB1DA5DA75005C1975 /* Assets.xcassets */; };
 		5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987171D8D8D430052AC6D /* AppDelegate.swift */; };
 		5FB9871A1D8D8D430052AC6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987191D8D8D430052AC6D /* ViewController.swift */; };
 		5FB9871D1D8D8D430052AC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB9871B1D8D8D430052AC6D /* Main.storyboard */; };
-		5FB9871F1D8D8D430052AC6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FB9871E1D8D8D430052AC6D /* Assets.xcassets */; };
 		5FB987221D8D8D430052AC6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB987201D8D8D430052AC6D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -35,11 +35,11 @@
 		5F3721951D9FFF0F005CBDF4 /* IndustryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryCell.swift; sourceTree = "<group>"; };
 		5F3721971D9FFF30005CBDF4 /* IndustryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndustryViewController.swift; sourceTree = "<group>"; };
 		5F3721991DA08EBB005CBDF4 /* DetailNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailNameVC.swift; sourceTree = "<group>"; };
+		5F3D07DB1DA5DA75005C1975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		5FB987141D8D8D430052AC6D /* SeniorSeminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeniorSeminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB987171D8D8D430052AC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FB987191D8D8D430052AC6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5FB9871C1D8D8D430052AC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5FB9871E1D8D8D430052AC6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FB987211D8D8D430052AC6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FB987231D8D8D430052AC6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,7 +111,7 @@
 				5F2DDCE71D9F4EAB00AE2C83 /* Controller */,
 				5FB987171D8D8D430052AC6D /* AppDelegate.swift */,
 				5FB9871B1D8D8D430052AC6D /* Main.storyboard */,
-				5FB9871E1D8D8D430052AC6D /* Assets.xcassets */,
+				5F3D07DB1DA5DA75005C1975 /* Assets.xcassets */,
 				5FB987201D8D8D430052AC6D /* LaunchScreen.storyboard */,
 				5FB987231D8D8D430052AC6D /* Info.plist */,
 			);
@@ -177,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FB987221D8D8D430052AC6D /* LaunchScreen.storyboard in Resources */,
-				5FB9871F1D8D8D430052AC6D /* Assets.xcassets in Resources */,
+				5F3D07DC1DA5DA75005C1975 /* Assets.xcassets in Resources */,
 				5FB9871D1D8D8D430052AC6D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
