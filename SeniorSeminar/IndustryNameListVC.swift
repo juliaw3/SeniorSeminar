@@ -1,27 +1,27 @@
 //
-//  IndustryViewController.swift
+//  IndustryNameListVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/1/16.
+//  Created by Julia Waggoner on 10/9/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class IndustryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-    @IBOutlet weak var table3: UITableView!
+class IndustryNameListVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    
+    @IBOutlet weak var industryNameTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        table3.delegate = self
-        table3.dataSource = self
+        industryNameTable.delegate = self
+        industryNameTable.dataSource = self
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //instead of creating new cells it just reuses old cells
-        if let cell = tableView.dequeueReusableCellWithIdentifier("IndustryCell", forIndexPath: indexPath)as? IndustryCell{
+        if let cell = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath)as? NameCell{
             
             return cell
             
@@ -33,10 +33,11 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 9
+        return 30
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -50,5 +51,6 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
     return CG
     }
     */
+    
     
 }

@@ -21,7 +21,7 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //instead of creating new cells it just reuses old cells
-        if let cell = tableView.dequeueReusableCellWithIdentifier("CompanyCell", forIndexPath: indexPath)as? NameCell{
+        if let cell = tableView.dequeueReusableCellWithIdentifier("CompanyCell", forIndexPath: indexPath)as? CompanyCell{
             
             return cell
             

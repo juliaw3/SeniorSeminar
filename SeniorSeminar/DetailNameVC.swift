@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailNameVC: UIViewController {
-
+    
     var name: Name!
     
     override func viewDidLoad() {

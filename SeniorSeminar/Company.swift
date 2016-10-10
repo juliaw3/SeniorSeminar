@@ -17,7 +17,7 @@ class Company{
         return _companyName
     }
     
-    init (company: String){
+    init (companyName: String){
         self._companyName = companyName
     }
 }
