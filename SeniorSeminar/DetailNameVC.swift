@@ -16,4 +16,7 @@ class DetailNameVC: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func btnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

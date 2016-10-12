@@ -1,22 +1,22 @@
 //
-//  CompanyNameListVC.swift
+//  IndustryDetailVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/7/16.
+//  Created by Julia Waggoner on 10/11/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class CompanyNameListVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class IndustryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    @IBOutlet weak var compNameTable: UITableView!
+    @IBOutlet weak var industryNameTable: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        compNameTable.delegate = self
-        compNameTable.dataSource = self
+        industryNameTable.delegate = self
+        industryNameTable.dataSource = self
     }
     
     @IBAction func BtnPressed(sender: AnyObject) {

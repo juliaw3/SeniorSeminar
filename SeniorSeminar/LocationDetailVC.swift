@@ -1,31 +1,31 @@
 //
-//  CompanyNameListVC.swift
+//  LocationDetailVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/7/16.
+//  Created by Julia Waggoner on 10/11/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class CompanyNameListVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class LocationDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var compNameTable: UITableView!
-    
+    @IBOutlet weak var locationTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        compNameTable.delegate = self
-        compNameTable.dataSource = self
+        locationTable.delegate = self
+        locationTable.dataSource = self
     }
     
-    @IBAction func BtnPressed(sender: AnyObject) {
+    @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //instead of creating new cells it just reuses old cells
-        if let cell = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath)as? NameCell{
+        if let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath: indexPath)as? LocationCell{
             
             return cell
             
@@ -36,7 +36,6 @@ class CompanyNameListVC: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
         
     }
     
