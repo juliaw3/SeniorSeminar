@@ -49,7 +49,6 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
@@ -61,6 +60,7 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -479,7 +479,7 @@
                                     <constraint firstItem="HlU-2e-Nbk" firstAttribute="top" secondItem="eVG-7h-Jea" secondAttribute="bottom" constant="5" id="GoY-sO-cxo"/>
                                     <constraint firstItem="fiM-iX-AQZ" firstAttribute="leading" secondItem="rvL-3z-CTS" secondAttribute="leading" constant="14" id="Jll-aE-00u"/>
                                     <constraint firstItem="eVG-7h-Jea" firstAttribute="leading" secondItem="rvL-3z-CTS" secondAttribute="leading" constant="8" id="PJl-2T-zz0"/>
-                                    <constraint firstItem="fiM-iX-AQZ" firstAttribute="top" secondItem="rvL-3z-CTS" secondAttribute="top" constant="27" id="asb-re-T5f"/>
+                                    <constraint firstItem="fiM-iX-AQZ" firstAttribute="top" secondItem="rvL-3z-CTS" secondAttribute="top" constant="15" id="asb-re-T5f"/>
                                     <constraint firstItem="eVG-7h-Jea" firstAttribute="top" secondItem="rvL-3z-CTS" secondAttribute="top" constant="34" id="crB-zI-t1V"/>
                                     <constraint firstItem="HlU-2e-Nbk" firstAttribute="leading" secondItem="rvL-3z-CTS" secondAttribute="leading" id="ek5-uT-HVa"/>
                                     <constraint firstAttribute="trailing" secondItem="eVG-7h-Jea" secondAttribute="trailing" constant="8" id="jjR-6A-4Ew"/>
@@ -522,7 +522,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="rvL-3z-CTS" secondAttribute="trailing" id="1e6-iY-iIV"/>
-                            <constraint firstItem="AMc-pL-64M" firstAttribute="top" secondItem="rvL-3z-CTS" secondAttribute="bottom" constant="5" id="Jhf-Eq-bZ8"/>
+                            <constraint firstItem="AMc-pL-64M" firstAttribute="top" secondItem="rvL-3z-CTS" secondAttribute="bottom" constant="10" id="Jhf-Eq-bZ8"/>
                             <constraint firstAttribute="trailing" secondItem="AMc-pL-64M" secondAttribute="trailing" id="b9U-5Y-VVG"/>
                             <constraint firstItem="CNX-d2-NWY" firstAttribute="top" secondItem="AMc-pL-64M" secondAttribute="bottom" id="czi-p4-oD6"/>
                             <constraint firstItem="rvL-3z-CTS" firstAttribute="leading" secondItem="b1v-o0-jOT" secondAttribute="leading" id="iPp-q8-jkd"/>
@@ -579,12 +579,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="6Xw-ln-Vh9" firstAttribute="top" secondItem="ypK-yt-q6W" secondAttribute="top" constant="34" id="UN5-mh-ju7"/>
+                                    <constraint firstItem="6Xw-ln-Vh9" firstAttribute="top" secondItem="ypK-yt-q6W" secondAttribute="top" constant="40" id="UN5-mh-ju7"/>
                                     <constraint firstAttribute="trailing" secondItem="6Xw-ln-Vh9" secondAttribute="trailing" constant="8" id="VNY-Wr-SuI"/>
                                     <constraint firstItem="8Gg-Gu-KW7" firstAttribute="leading" secondItem="ypK-yt-q6W" secondAttribute="leading" id="hn3-9O-O3R"/>
                                     <constraint firstItem="skb-g1-vPo" firstAttribute="top" secondItem="ypK-yt-q6W" secondAttribute="top" constant="15" id="iio-l8-aCx"/>
                                     <constraint firstAttribute="trailing" secondItem="8Gg-Gu-KW7" secondAttribute="trailing" id="k3E-kF-gXF"/>
-                                    <constraint firstItem="8Gg-Gu-KW7" firstAttribute="top" secondItem="6Xw-ln-Vh9" secondAttribute="bottom" constant="34" id="lCS-PW-JZ8"/>
+                                    <constraint firstItem="8Gg-Gu-KW7" firstAttribute="top" secondItem="6Xw-ln-Vh9" secondAttribute="bottom" constant="28" id="lCS-PW-JZ8"/>
                                     <constraint firstItem="skb-g1-vPo" firstAttribute="leading" secondItem="ypK-yt-q6W" secondAttribute="leading" constant="14" id="npF-Hp-z0r"/>
                                     <constraint firstAttribute="height" constant="115" id="pap-Qh-w7h"/>
                                     <constraint firstItem="6Xw-ln-Vh9" firstAttribute="leading" secondItem="ypK-yt-q6W" secondAttribute="leading" constant="8" id="yd5-Gd-GTS"/>
@@ -945,7 +945,7 @@
                                 <constraints>
                                     <constraint firstItem="XM8-Wv-Tf1" firstAttribute="leading" secondItem="vvD-BX-wF0" secondAttribute="leading" id="e4b-Nq-nQz"/>
                                     <constraint firstItem="XM8-Wv-Tf1" firstAttribute="top" secondItem="vvD-BX-wF0" secondAttribute="top" id="nUN-eF-vlm"/>
-                                    <constraint firstAttribute="trailing" secondItem="XM8-Wv-Tf1" secondAttribute="trailing" id="vBE-iO-eWf"/>
+                                    <constraint firstAttribute="trailing" secondItem="XM8-Wv-Tf1" secondAttribute="trailing" constant="50" id="vBE-iO-eWf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1748,6 +1748,6 @@
         <image name="map2" width="600" height="322"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iwR-Fn-QrF"/>
+        <segue reference="Jzv-nN-W3L"/>
     </inferredMetricsTieBreakers>
 </document>
