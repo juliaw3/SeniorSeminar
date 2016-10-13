@@ -25,6 +25,7 @@
 		5F3D07EA1DAD8A9F005C1975 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07E91DAD8A9F005C1975 /* LocationCell.swift */; };
 		5F3D07EC1DAD8BAA005C1975 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */; };
 		5F3D07EE1DAD8BD2005C1975 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07ED1DAD8BD2005C1975 /* LocationViewController.swift */; };
+		5F3D07F01DAF093F005C1975 /* LocationDetailNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */; };
 		5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987171D8D8D430052AC6D /* AppDelegate.swift */; };
 		5FB9871A1D8D8D430052AC6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987191D8D8D430052AC6D /* ViewController.swift */; };
 		5FB9871D1D8D8D430052AC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB9871B1D8D8D430052AC6D /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		5F3D07E91DAD8A9F005C1975 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		5F3D07ED1DAD8BD2005C1975 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailNameVC.swift; sourceTree = "<group>"; };
 		5FB987141D8D8D430052AC6D /* SeniorSeminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeniorSeminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB987171D8D8D430052AC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FB987191D8D8D430052AC6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				5FB987191D8D8D430052AC6D /* ViewController.swift */,
 				5F3D07ED1DAD8BD2005C1975 /* LocationViewController.swift */,
 				5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */,
+				5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */,
 				5F3D07E51DAD3656005C1975 /* TimelineViewController.swift */,
 			);
 			name = Controller;
@@ -225,6 +228,7 @@
 				5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */,
 				5F3D07E41DACA16A005C1975 /* IndustryDetailVC.swift in Sources */,
 				5F3721981D9FFF30005CBDF4 /* IndustryViewController.swift in Sources */,
+				5F3D07F01DAF093F005C1975 /* LocationDetailNameVC.swift in Sources */,
 				5F37218C1D9FF172005CBDF4 /* NameViewController.swift in Sources */,
 				5F3721941D9FFF00005CBDF4 /* Industry.swift in Sources */,
 				5F3721961D9FFF0F005CBDF4 /* IndustryCell.swift in Sources */,

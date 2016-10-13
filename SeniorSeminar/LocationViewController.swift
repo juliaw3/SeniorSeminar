@@ -15,4 +15,10 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func USButton (sender: UIButton!){
+        performSegueWithIdentifier("USPush", sender: nil)
+    }
+    
+    
 }

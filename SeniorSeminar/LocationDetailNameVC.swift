@@ -1,27 +1,27 @@
 //
-//  IndustryDetailVC.swift
+//  LocationDetailNameVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/11/16.
+//  Created by Julia Waggoner on 10/12/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class IndustryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class LocationDetailNameVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var industryNameTable: UITableView!
-    
+    @IBOutlet weak var locationNameTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        industryNameTable.delegate = self
-        industryNameTable.dataSource = self
+        locationNameTable.delegate = self
+        locationNameTable.dataSource = self
     }
     
-    @IBAction func BtnPressed(sender: AnyObject) {
+    @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //instead of creating new cells it just reuses old cells
@@ -37,11 +37,10 @@ class IndustryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 10
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -56,5 +55,5 @@ class IndustryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     */
     
-
+    
 }
