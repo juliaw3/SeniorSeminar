@@ -20,5 +20,8 @@ class LocationViewController: UIViewController {
         performSegueWithIdentifier("USPush", sender: nil)
     }
     
+    @IBAction func btnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }

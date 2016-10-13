@@ -1,26 +1,20 @@
 //
-//  TimelineViewController.swift
+//  TimelineDetailVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/11/16.
+//  Created by Julia Waggoner on 10/12/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class TimelineViewController: UIViewController {
-    
-    var timeline: Name!
+class TimelineDetailVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func USButton (sender: UIButton!){
-        performSegueWithIdentifier("TimePush", sender: nil)
     }
 }

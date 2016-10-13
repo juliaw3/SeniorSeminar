@@ -18,6 +18,10 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
         table2.dataSource = self
     }
     
+    @IBAction func btnPressed(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         //instead of creating new cells it just reuses old cells

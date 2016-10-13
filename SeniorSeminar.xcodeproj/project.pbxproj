@@ -26,6 +26,11 @@
 		5F3D07EC1DAD8BAA005C1975 /* LocationDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */; };
 		5F3D07EE1DAD8BD2005C1975 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07ED1DAD8BD2005C1975 /* LocationViewController.swift */; };
 		5F3D07F01DAF093F005C1975 /* LocationDetailNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */; };
+		5F3D07F31DAF1FCD005C1975 /* Trubble.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07F21DAF1FCD005C1975 /* Trubble.ttf */; };
+		5F3D07F51DAF202B005C1975 /* Kickass.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07F41DAF202B005C1975 /* Kickass.ttf */; };
+		5F3D07F71DAF22DE005C1975 /* Napapiiri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07F61DAF22DE005C1975 /* Napapiiri.ttf */; };
+		5F3D07F91DAF2339005C1975 /* Iam.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07F81DAF2339005C1975 /* Iam.ttf */; };
+		5F3D07FB1DAF3CE5005C1975 /* TimelineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */; };
 		5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987171D8D8D430052AC6D /* AppDelegate.swift */; };
 		5FB9871A1D8D8D430052AC6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987191D8D8D430052AC6D /* ViewController.swift */; };
 		5FB9871D1D8D8D430052AC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB9871B1D8D8D430052AC6D /* Main.storyboard */; };
@@ -52,6 +57,11 @@
 		5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailVC.swift; sourceTree = "<group>"; };
 		5F3D07ED1DAD8BD2005C1975 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailNameVC.swift; sourceTree = "<group>"; };
+		5F3D07F21DAF1FCD005C1975 /* Trubble.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Trubble.ttf; sourceTree = "<group>"; };
+		5F3D07F41DAF202B005C1975 /* Kickass.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kickass.ttf; sourceTree = "<group>"; };
+		5F3D07F61DAF22DE005C1975 /* Napapiiri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Napapiiri.ttf; sourceTree = "<group>"; };
+		5F3D07F81DAF2339005C1975 /* Iam.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Iam.ttf; sourceTree = "<group>"; };
+		5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDetailVC.swift; sourceTree = "<group>"; };
 		5FB987141D8D8D430052AC6D /* SeniorSeminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeniorSeminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB987171D8D8D430052AC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FB987191D8D8D430052AC6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +117,20 @@
 				5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */,
 				5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */,
 				5F3D07E51DAD3656005C1975 /* TimelineViewController.swift */,
+				5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		5F3D07F11DAF1F87005C1975 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F3D07F61DAF22DE005C1975 /* Napapiiri.ttf */,
+				5F3D07F81DAF2339005C1975 /* Iam.ttf */,
+				5F3D07F41DAF202B005C1975 /* Kickass.ttf */,
+				5F3D07F21DAF1FCD005C1975 /* Trubble.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		5FB9870B1D8D8D420052AC6D = {
@@ -133,6 +155,7 @@
 				5F2DDCE51D9F4E9700AE2C83 /* Model */,
 				5F2DDCE61D9F4EA600AE2C83 /* View */,
 				5F2DDCE71D9F4EAB00AE2C83 /* Controller */,
+				5F3D07F11DAF1F87005C1975 /* Resources */,
 				5FB987171D8D8D430052AC6D /* AppDelegate.swift */,
 				5FB9871B1D8D8D430052AC6D /* Main.storyboard */,
 				5F3D07DB1DA5DA75005C1975 /* Assets.xcassets */,
@@ -200,9 +223,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F3D07F71DAF22DE005C1975 /* Napapiiri.ttf in Resources */,
 				5FB987221D8D8D430052AC6D /* LaunchScreen.storyboard in Resources */,
 				5F3D07DC1DA5DA75005C1975 /* Assets.xcassets in Resources */,
 				5FB9871D1D8D8D430052AC6D /* Main.storyboard in Resources */,
+				5F3D07F51DAF202B005C1975 /* Kickass.ttf in Resources */,
+				5F3D07F31DAF1FCD005C1975 /* Trubble.ttf in Resources */,
+				5F3D07F91DAF2339005C1975 /* Iam.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +250,7 @@
 				5F3D07EE1DAD8BD2005C1975 /* LocationViewController.swift in Sources */,
 				5F37218E1D9FF833005CBDF4 /* CompanyViewController.swift in Sources */,
 				5F3721921D9FF89F005CBDF4 /* CompanyCell.swift in Sources */,
+				5F3D07FB1DAF3CE5005C1975 /* TimelineDetailVC.swift in Sources */,
 				5F2DDCEB1D9F539400AE2C83 /* NameCell.swift in Sources */,
 				5F3721901D9FF850005CBDF4 /* Company.swift in Sources */,
 				5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */,
