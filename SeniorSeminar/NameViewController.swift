@@ -12,11 +12,41 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var table: UITableView!
     
+    var nameOfMifi = [Name]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+        
+        parseJSON()
     }
+    
+    ////////////////
+    //parse the main JSON for the main view controller
+    
+    func parseJSON(){
+        do{
+            let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
+            
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+            
+            for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
+                
+                let mifiName2 = anItem["name"] as! String
+                
+                let newName = Name(mifiName: mifiName2)
+                nameOfMifi.append(newName)
+                //print("Name: \(newName)")
+
+            }
+        }
+        catch let error as NSError{
+            print(error.debugDescription)
+        }
+    }
+
+    /////////////////////////
     
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -27,6 +57,10 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
         //instead of creating new cells it just reuses old cells
         if let cell = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath)as? NameCell{
             
+            let name: Name!
+            name = nameOfMifi[indexPath.row]
+            //print("Did we get here?: \(name)")
+            cell.configureCell(name)
             return cell
             
         } else{
@@ -41,7 +75,7 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return nameOfMifi.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
