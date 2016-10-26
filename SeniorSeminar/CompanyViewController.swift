@@ -8,9 +8,13 @@
 
 import UIKit
 
-class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var table2: UITableView!
+    @IBOutlet weak var searchbar: UISearchBar!
+   
+    var inSearch = false
+    var filteredSearch = [Company]()
     
      var companyOfMifi = [Company]()
     
@@ -18,6 +22,8 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         table2.delegate = self
         table2.dataSource = self
+        searchbar.delegate = self
+        searchbar.returnKeyType = UIReturnKeyType.Done
         
         parseJSON()
     }
@@ -57,7 +63,13 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let cell = tableView.dequeueReusableCellWithIdentifier("CompanyCell", forIndexPath: indexPath)as? CompanyCell{
             
             let company: Company!
-            company = companyOfMifi[indexPath.row]
+            if inSearch{
+                company = filteredSearch[indexPath.row]
+            }
+            else{
+                company = companyOfMifi[indexPath.row]
+            }
+            
             cell.configureCell(company)
             return cell
             
@@ -68,10 +80,22 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var company: Company!
         
+        if inSearch{
+            company = filteredSearch[indexPath.row]
+        }
+        else{
+            company = companyOfMifi[indexPath.row]
+        }
+        
+        performSegueWithIdentifier("CompanyPush", sender: company)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if inSearch{
+            return filteredSearch.count
+        }
         return companyOfMifi.count
     }
     
@@ -80,12 +104,23 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
         return 1
     }
     
-    //might not need this one?
-    /*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return CG
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
     }
-    */
-
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
+        if searchbar.text == nil || searchbar.text == ""{
+            inSearch = false
+            view.endEditing(true)
+            table2.reloadData()
+        }
+        else{
+            inSearch = true
+            let lower = searchBar.text!
+            filteredSearch = companyOfMifi.filter({$0.companyName.rangeOfString(lower) != nil})
+            table2.reloadData()
+            
+        }
+    }
 
 }

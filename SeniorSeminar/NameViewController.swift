@@ -8,9 +8,13 @@
 
 import UIKit
 
-class NameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class NameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate  {
 
     @IBOutlet weak var table: UITableView!
+    @IBOutlet weak var searchbar: UISearchBar!
+    
+    var inSearch = false
+    var filteredSearch = [Name]()
     
     var nameOfMifi = [Name]()
     
@@ -18,6 +22,8 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         table.delegate = self
         table.dataSource = self
+        searchbar.delegate = self
+        searchbar.returnKeyType = UIReturnKeyType.Done
         
         parseJSON()
     }
@@ -58,8 +64,14 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let cell = tableView.dequeueReusableCellWithIdentifier("NameCell", forIndexPath: indexPath)as? NameCell{
             
             let name: Name!
-            name = nameOfMifi[indexPath.row]
-            //print("Did we get here?: \(name)")
+            
+            if inSearch{
+                name = filteredSearch[indexPath.row]
+            }
+            else{
+                name = nameOfMifi[indexPath.row]
+            }
+            
             cell.configureCell(name)
             return cell
             
@@ -70,25 +82,48 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var name: Name!
         
+        if inSearch{
+            name = filteredSearch[indexPath.row]
+        }
+        else{
+            name = nameOfMifi[indexPath.row]
+        }
+        
+        performSegueWithIdentifier("NamePush", sender: name)
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if inSearch{
+            return filteredSearch.count
+        }
         return nameOfMifi.count
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        //this may need to change when I add more sections
         return 1
     }
 
-    //might not need this one?
-    /*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return CG
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
     }
-    */
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
+        if searchbar.text == nil || searchbar.text == ""{
+            inSearch = false
+            view.endEditing(true)
+            table.reloadData()
+        }
+        else{
+            inSearch = true
+            let lower = searchBar.text!
+            filteredSearch = nameOfMifi.filter({$0.mifiName.rangeOfString(lower) != nil})
+            table.reloadData()
+            
+        }
+    }
 
 
 }

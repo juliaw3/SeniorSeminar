@@ -369,7 +369,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="7BF-sQ-9eC" id="L07-Bk-Anc"/>
-                                            <segue destination="l4e-5d-SWj" kind="show" id="b6h-C1-TOR"/>
+                                            <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="b6h-C1-TOR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -388,6 +388,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Name" image="ic_person_white" selectedImage="ic_person_white" id="fdx-Lf-xah"/>
                     <connections>
+                        <outlet property="searchbar" destination="6GU-Ok-Nfw" id="2p8-ur-OZN"/>
                         <outlet property="table" destination="pgD-HH-U7s" id="XNJ-wq-MzJ"/>
                     </connections>
                 </viewController>
@@ -495,7 +496,7 @@
                                                 <connections>
                                                     <outlet property="blockImage" destination="Ymm-vM-3wy" id="HYk-2R-6qz"/>
                                                     <outlet property="companyLabel" destination="W5j-zB-6KX" id="TS4-Lf-IDd"/>
-                                                    <segue destination="vgz-L8-Reo" kind="show" id="uyG-eq-5Hg"/>
+                                                    <segue destination="vgz-L8-Reo" kind="show" identifier="CompanyPush" id="uyG-eq-5Hg"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -523,6 +524,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Company" image="ic_business_center_white" selectedImage="ic_business_center_white" id="50s-GQ-rtP"/>
                     <connections>
+                        <outlet property="searchbar" destination="J3J-oi-Awg" id="cGb-Nd-c5x"/>
                         <outlet property="table2" destination="opj-2s-x0s" id="sO4-Ou-jUh"/>
                     </connections>
                 </viewController>

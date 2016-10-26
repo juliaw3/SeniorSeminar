@@ -24,3 +24,4 @@ class TimelineViewController: UIViewController {
         performSegueWithIdentifier("TimePush", sender: nil)
     }
 }
+//numberOfSections in Table View needs to be used

@@ -12,11 +12,39 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var table3: UITableView!
     
+    var industryOfMifi = [Industry]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         table3.delegate = self
         table3.dataSource = self
+        
+        parseJSON()
     }
+    
+    ////////////////
+    //parse the main JSON for the main view controller
+    
+    func parseJSON(){
+        do{
+            let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
+            
+            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+            
+            for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
+                
+                let mifiIndustry2 = anItem["mediaIndustry"] as! String
+                
+                let newIndustry = Industry(industryName: mifiIndustry2)
+                industryOfMifi.append(newIndustry)
+            }
+        }
+        catch let error as NSError{
+            print(error.debugDescription)
+        }
+    }
+    
+    /////////////////////////
     
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -27,6 +55,9 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
         //instead of creating new cells it just reuses old cells
         if let cell = tableView.dequeueReusableCellWithIdentifier("IndustryCell", forIndexPath: indexPath)as? IndustryCell{
             
+            let industry: Industry!
+            industry = industryOfMifi[indexPath.row]
+            cell.configureCell(industry)
             return cell
             
         } else{
