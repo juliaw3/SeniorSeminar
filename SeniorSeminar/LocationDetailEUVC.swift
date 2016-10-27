@@ -1,14 +1,14 @@
 //
-//  LocationDetailVC.swift
+//  LocationDetailEUVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/11/16.
+//  Created by Julia Waggoner on 10/26/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
 import UIKit
 
-class LocationDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+class LocationDetailEUVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var locationTable: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
@@ -37,7 +37,7 @@ class LocationDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
                 
                 let mifiContinent = anItem["continent"] as! String!
-                if mifiContinent == "US"{
+                if mifiContinent == "EU"{
                     let mifiLocation = anItem["location"] as! String
                     let newLocation = Location(location: mifiLocation)
                     locationOfMifi.append(newLocation)
