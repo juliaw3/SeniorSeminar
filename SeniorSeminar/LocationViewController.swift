@@ -23,7 +23,7 @@ class LocationViewController: UIViewController {
         performSegueWithIdentifier("SAPush", sender: nil)
     }
     @IBAction func EUButton (sender: UIButton!){
-        performSegueWithIdentifier("EUPUsh", sender: nil)
+        performSegueWithIdentifier("EUPush", sender: nil)
     }
     @IBAction func AfricaButton (sender: UIButton!){
         performSegueWithIdentifier("AfricaPush", sender: nil)

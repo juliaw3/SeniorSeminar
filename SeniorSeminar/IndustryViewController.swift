@@ -31,12 +31,17 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
             
             let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
             
+            var industrySet = Set<String>()
+            
             for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
                 
                 let mifiIndustry2 = anItem["mediaIndustry"] as! String
-                
-                let newIndustry = Industry(industryName: mifiIndustry2)
-                industryOfMifi.append(newIndustry)
+                if !(industrySet.contains(mifiIndustry2)){
+                    industrySet.insert(mifiIndustry2)
+                    
+                    let newIndustry = Industry(industryName: mifiIndustry2)
+                    industryOfMifi.append(newIndustry)
+                }
             }
         }
         catch let error as NSError{
