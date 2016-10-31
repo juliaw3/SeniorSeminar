@@ -1,0 +1,6 @@
+framework module Pods_SeniorSeminar {
+  umbrella header "Pods-SeniorSeminar-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -124,6 +124,14 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DetailNameVC"{
+            if let detailsVC = segue.destinationViewController as? DetailNameVC{
+                if let name = sender as? Name{
+                    detailsVC.name = name
+                }
+            }
+        }
+    }
 
 }

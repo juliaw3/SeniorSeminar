@@ -54,6 +54,8 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue</string>
@@ -71,10 +73,8 @@
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
-            <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Bold</string>
         </mutableArray>
         <mutableArray key="Napapiiri.ttf">
             <string>Napapiiri</string>
@@ -384,7 +384,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="7BF-sQ-9eC" id="L07-Bk-Anc"/>
-                                            <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="b6h-C1-TOR"/>
+                                            <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="w1b-oT-3wN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -624,7 +624,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="a1s-wC-rsd" id="4Br-h2-e2l"/>
-                                            <segue destination="l4e-5d-SWj" kind="show" id="iwR-Fn-QrF"/>
+                                            <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="DAB-ze-x3p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -965,6 +965,22 @@
                             <constraint firstItem="ypK-yt-q6W" firstAttribute="top" secondItem="JTx-av-e5R" secondAttribute="top" id="xAj-gA-r0x"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="companyLbl" destination="H9x-VU-K5c" id="arO-7m-7Zf"/>
+                        <outlet property="contactLbl" destination="EXE-4s-ceV" id="gIg-38-cO4"/>
+                        <outlet property="descriptionLbl" destination="HWa-ZL-CjE" id="DBW-YO-qqH"/>
+                        <outlet property="gain1" destination="sdB-6n-TUV" id="Uu7-Wv-Z91"/>
+                        <outlet property="gain2" destination="RaA-C5-HJv" id="iqe-uH-nC3"/>
+                        <outlet property="gain3" destination="orb-Db-aRJ" id="um2-wj-BTO"/>
+                        <outlet property="gradLbl" destination="ANL-oF-MSu" id="L50-r3-oSQ"/>
+                        <outlet property="housingLbl" destination="hbK-M3-QoD" id="dCR-fy-7J1"/>
+                        <outlet property="industryLbl" destination="8jU-qe-ZY0" id="U8U-ag-5Pl"/>
+                        <outlet property="locationLbl" destination="jLD-pZ-YE3" id="GlZ-AB-9vP"/>
+                        <outlet property="nameLbl" destination="6Xw-ln-Vh9" id="12j-fz-z6R"/>
+                        <outlet property="need1" destination="KCx-IS-gb8" id="wz8-mR-s88"/>
+                        <outlet property="need2" destination="FsI-nr-TE3" id="zFr-ff-mtX"/>
+                        <outlet property="need3" destination="ZKt-6T-3Dt" id="kJW-sX-kpW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5u-Hd-xGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1264,9 +1280,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="lNu-1Y-Tnu" secondAttribute="bottom" constant="3" id="ydq-6b-htb"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="l4e-5d-SWj" kind="show" id="Uga-tc-tb5"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -2583,6 +2596,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Drq-yp-2yj"/>
-        <segue reference="iwR-Fn-QrF"/>
+        <segue reference="w1b-oT-3wN"/>
     </inferredMetricsTieBreakers>
 </document>
