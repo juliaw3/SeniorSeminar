@@ -39,7 +39,8 @@ class LocationDetailAsiaVC: UIViewController, UITableViewDelegate, UITableViewDa
                 let mifiContinent = anItem["continent"] as! String!
                 if mifiContinent == "Asia"{
                     let mifiLocation = anItem["location"] as! String
-                    let newLocation = Location(location: mifiLocation)
+                    let mifiId = anItem["employeeId"] as! Int
+                    let newLocation = Location(location: mifiLocation, mifiId: mifiId)
                     locationOfMifi.append(newLocation)
                 }
             }
@@ -86,7 +87,7 @@ class LocationDetailAsiaVC: UIViewController, UITableViewDelegate, UITableViewDa
             location = locationOfMifi[indexPath.row]
         }
         
-        performSegueWithIdentifier("USNamePush", sender: location)
+        performSegueWithIdentifier("LocationPush", sender: location)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,6 +113,15 @@ class LocationDetailAsiaVC: UIViewController, UITableViewDelegate, UITableViewDa
             filteredSearch = locationOfMifi.filter({$0.location.rangeOfString(lower) != nil})
             locationTable.reloadData()
             
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LocationPush"{
+            if let detailsVC = segue.destinationViewController as? DetailLocationVC{
+                if let location = sender as? Location{
+                    detailsVC.location = location
+                }
+            }
         }
     }
     

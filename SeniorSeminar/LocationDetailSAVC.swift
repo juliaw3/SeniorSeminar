@@ -39,7 +39,8 @@ class LocationDetailSAVC: UIViewController, UITableViewDelegate, UITableViewData
                 let mifiContinent = anItem["continent"] as! String!
                 if mifiContinent == "SA"{
                     let mifiLocation = anItem["location"] as! String
-                    let newLocation = Location(location: mifiLocation)
+                    let mifiId = anItem["employeeId"] as! Int
+                    let newLocation = Location(location: mifiLocation, mifiId: mifiId)
                     locationOfMifi.append(newLocation)
                 }
             }
@@ -52,7 +53,7 @@ class LocationDetailSAVC: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
+     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath: indexPath)as? LocationCell{
@@ -86,7 +87,7 @@ class LocationDetailSAVC: UIViewController, UITableViewDelegate, UITableViewData
             location = locationOfMifi[indexPath.row]
         }
         
-        performSegueWithIdentifier("USNamePush", sender: location)
+        performSegueWithIdentifier("LocationPush", sender: location)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,6 +115,14 @@ class LocationDetailSAVC: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "LocationPush"{
+            if let detailsVC = segue.destinationViewController as? DetailLocationVC{
+                if let location = sender as? Location{
+                    detailsVC.location = location
+                }
+            }
+        }
+    }
     
 }

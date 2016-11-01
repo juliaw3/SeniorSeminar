@@ -14,6 +14,7 @@
 		5F28A0A01DC1A990000FD227 /* LocationDetailAustraliaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A09F1DC1A990000FD227 /* LocationDetailAustraliaVC.swift */; };
 		5F28A0A21DC6E7C0000FD227 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A0A11DC6E7C0000FD227 /* Constants.swift */; };
 		5F28A0CE1DC911B2000FD227 /* DetailCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A0CD1DC911B1000FD227 /* DetailCompanyVC.swift */; };
+		5F28A0D01DC92685000FD227 /* DetailLocationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A0CF1DC92685000FD227 /* DetailLocationVC.swift */; };
 		5F2DDCE91D9F4F2300AE2C83 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DDCE81D9F4F2300AE2C83 /* Name.swift */; };
 		5F2DDCEB1D9F539400AE2C83 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DDCEA1D9F539400AE2C83 /* NameCell.swift */; };
 		5F37218C1D9FF172005CBDF4 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37218B1D9FF172005CBDF4 /* NameViewController.swift */; };
@@ -55,6 +56,7 @@
 		5F28A09F1DC1A990000FD227 /* LocationDetailAustraliaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailAustraliaVC.swift; sourceTree = "<group>"; };
 		5F28A0A11DC6E7C0000FD227 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5F28A0CD1DC911B1000FD227 /* DetailCompanyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCompanyVC.swift; sourceTree = "<group>"; };
+		5F28A0CF1DC92685000FD227 /* DetailLocationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLocationVC.swift; sourceTree = "<group>"; };
 		5F2DDCE81D9F4F2300AE2C83 /* Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		5F2DDCEA1D9F539400AE2C83 /* NameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
 		5F37218B1D9FF172005CBDF4 /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -132,9 +134,9 @@
 				5F3D07DD1DA81364005C1975 /* CompanyNameListVC.swift */,
 				5F3721971D9FFF30005CBDF4 /* IndustryViewController.swift */,
 				5F3D07E31DACA16A005C1975 /* IndustryDetailVC.swift */,
-				5FB987191D8D8D430052AC6D /* ViewController.swift */,
 				5F3D07ED1DAD8BD2005C1975 /* LocationViewController.swift */,
 				5F3D07EB1DAD8BAA005C1975 /* LocationDetailVC.swift */,
+				5F28A0CF1DC92685000FD227 /* DetailLocationVC.swift */,
 				5F28A0971DC1A2B5000FD227 /* LocationDetailSAVC.swift */,
 				5F28A0991DC1A900000FD227 /* LocationDetailEUVC.swift */,
 				5F28A09B1DC1A93B000FD227 /* LocationDetailAsiaVC.swift */,
@@ -143,6 +145,7 @@
 				5F3D07EF1DAF093F005C1975 /* LocationDetailNameVC.swift */,
 				5F3D07E51DAD3656005C1975 /* TimelineViewController.swift */,
 				5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */,
+				5FB987191D8D8D430052AC6D /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				5F2DDCEB1D9F539400AE2C83 /* NameCell.swift in Sources */,
 				5F3721901D9FF850005CBDF4 /* Company.swift in Sources */,
 				5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */,
+				5F28A0D01DC92685000FD227 /* DetailLocationVC.swift in Sources */,
 				5F3D07E41DACA16A005C1975 /* IndustryDetailVC.swift in Sources */,
 				5F3721981D9FFF30005CBDF4 /* IndustryViewController.swift in Sources */,
 				5F3D07F01DAF093F005C1975 /* LocationDetailNameVC.swift in Sources */,
