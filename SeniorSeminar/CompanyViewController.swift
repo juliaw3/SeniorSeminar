@@ -125,7 +125,7 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CompanyPush"{
-            if let detailsVC = segue.destinationViewController as? DetailNameVC{
+            if let detailsVC = segue.destinationViewController as? DetailCompanyVC{
                 if let company = sender as? Company{
                     detailsVC.company = company
                 }

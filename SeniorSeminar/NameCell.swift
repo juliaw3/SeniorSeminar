@@ -18,5 +18,6 @@ class NameCell: UITableViewCell {
         self.name = name
         nameLabel.text = self.name.mifiName.capitalizedString
     }
+    
 
 }

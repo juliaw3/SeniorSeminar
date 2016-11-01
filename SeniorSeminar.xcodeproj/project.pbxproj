@@ -13,6 +13,7 @@
 		5F28A09E1DC1A96A000FD227 /* LocationDetailAfricaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A09D1DC1A96A000FD227 /* LocationDetailAfricaVC.swift */; };
 		5F28A0A01DC1A990000FD227 /* LocationDetailAustraliaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A09F1DC1A990000FD227 /* LocationDetailAustraliaVC.swift */; };
 		5F28A0A21DC6E7C0000FD227 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A0A11DC6E7C0000FD227 /* Constants.swift */; };
+		5F28A0CE1DC911B2000FD227 /* DetailCompanyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28A0CD1DC911B1000FD227 /* DetailCompanyVC.swift */; };
 		5F2DDCE91D9F4F2300AE2C83 /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DDCE81D9F4F2300AE2C83 /* Name.swift */; };
 		5F2DDCEB1D9F539400AE2C83 /* NameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F2DDCEA1D9F539400AE2C83 /* NameCell.swift */; };
 		5F37218C1D9FF172005CBDF4 /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F37218B1D9FF172005CBDF4 /* NameViewController.swift */; };
@@ -53,6 +54,7 @@
 		5F28A09D1DC1A96A000FD227 /* LocationDetailAfricaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailAfricaVC.swift; sourceTree = "<group>"; };
 		5F28A09F1DC1A990000FD227 /* LocationDetailAustraliaVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailAustraliaVC.swift; sourceTree = "<group>"; };
 		5F28A0A11DC6E7C0000FD227 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5F28A0CD1DC911B1000FD227 /* DetailCompanyVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCompanyVC.swift; sourceTree = "<group>"; };
 		5F2DDCE81D9F4F2300AE2C83 /* Name.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		5F2DDCEA1D9F539400AE2C83 /* NameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameCell.swift; sourceTree = "<group>"; };
 		5F37218B1D9FF172005CBDF4 /* NameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				5F37218B1D9FF172005CBDF4 /* NameViewController.swift */,
 				5F3721991DA08EBB005CBDF4 /* DetailNameVC.swift */,
 				5F37218D1D9FF832005CBDF4 /* CompanyViewController.swift */,
+				5F28A0CD1DC911B1000FD227 /* DetailCompanyVC.swift */,
 				5F3D07DD1DA81364005C1975 /* CompanyNameListVC.swift */,
 				5F3721971D9FFF30005CBDF4 /* IndustryViewController.swift */,
 				5F3D07E31DACA16A005C1975 /* IndustryDetailVC.swift */,
@@ -348,6 +351,7 @@
 				5F3721921D9FF89F005CBDF4 /* CompanyCell.swift in Sources */,
 				5F28A0981DC1A2B5000FD227 /* LocationDetailSAVC.swift in Sources */,
 				5F3D07FB1DAF3CE5005C1975 /* TimelineDetailVC.swift in Sources */,
+				5F28A0CE1DC911B2000FD227 /* DetailCompanyVC.swift in Sources */,
 				5F28A0A01DC1A990000FD227 /* LocationDetailAustraliaVC.swift in Sources */,
 				5F2DDCEB1D9F539400AE2C83 /* NameCell.swift in Sources */,
 				5F3721901D9FF850005CBDF4 /* Company.swift in Sources */,
