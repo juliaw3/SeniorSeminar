@@ -50,5 +50,10 @@
 		<string>kickass.ttf</string>
 		<string>trubble.ttf</string>
 	</array>
+	<key>NSAppTrasportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

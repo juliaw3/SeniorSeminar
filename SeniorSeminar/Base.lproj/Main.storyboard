@@ -384,7 +384,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="7BF-sQ-9eC" id="L07-Bk-Anc"/>
-                                            <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="w1b-oT-3wN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -405,6 +404,7 @@
                     <connections>
                         <outlet property="searchbar" destination="6GU-Ok-Nfw" id="2p8-ur-OZN"/>
                         <outlet property="table" destination="pgD-HH-U7s" id="XNJ-wq-MzJ"/>
+                        <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="ieo-K9-M5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmf-gZ-5e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -624,7 +624,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="a1s-wC-rsd" id="4Br-h2-e2l"/>
-                                            <segue destination="l4e-5d-SWj" kind="show" identifier="NamePush" id="DAB-ze-x3p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -966,7 +965,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="companyLbl" destination="H9x-VU-K5c" id="arO-7m-7Zf"/>
+                        <outlet property="companyLbl" destination="H9x-VU-K5c" id="6WO-yK-qzS"/>
                         <outlet property="contactLbl" destination="EXE-4s-ceV" id="gIg-38-cO4"/>
                         <outlet property="descriptionLbl" destination="HWa-ZL-CjE" id="DBW-YO-qqH"/>
                         <outlet property="gain1" destination="sdB-6n-TUV" id="Uu7-Wv-Z91"/>
@@ -1061,7 +1060,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="LlK-Ku-ggH" id="m21-sf-eue"/>
-                                            <segue destination="l4e-5d-SWj" kind="show" id="TZo-mJ-evP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2596,6 +2594,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Drq-yp-2yj"/>
-        <segue reference="w1b-oT-3wN"/>
     </inferredMetricsTieBreakers>
 </document>

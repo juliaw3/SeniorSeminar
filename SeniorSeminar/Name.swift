@@ -28,6 +28,11 @@ class Name{
     private var _housing: String!
     //private var _recommend: Bool!
     private var _contactInfo: String!
+    private var _employeeId: Int!
+    
+    var employeeId: Int{
+        return _employeeId
+    }
     
     var mifiName: String{
         if _mifiName == nil{
@@ -127,8 +132,9 @@ class Name{
         return _contactInfo
     }
     
-    init (mifiName: String){
+    init (mifiName: String, mifiId: Int){
         self._mifiName = mifiName
+        self._employeeId = mifiId
     }
     
     
@@ -137,30 +143,37 @@ class Name{
         let url = NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!
         Alamofire.request(.GET, url).responseJSON{response in
             let result = response.result
-            if let dict = result.value as? Dictionary<String, AnyObject>{
-                if let name = dict["name"] as? String{
+            
+            print(result.value.debugDescription)
+            
+            
+            if let dict = result.value as? [Dictionary<String, AnyObject>]{
+                if let name = dict[self.employeeId - 1]["name"] as? String{
                     self._mifiName = name
                 }
-                if let mediaIndustry = dict["mediaIndustry"] as? String{
+                if let mediaIndustry = dict[self.employeeId - 1]["mediaIndustry"] as? String{
                     self._mediaIndustry = mediaIndustry
                 }
-                if let location = dict["mediaIndustry"] as? String{
+                if let company = dict[self.employeeId - 1]["company"] as? String{
+                    self._company = company
+                }
+                if let location = dict[self.employeeId - 1]["location"] as? String{
                     self._location = location
                 }
-                if let gradYear = dict["graduationYear"] as? String{
+                if let gradYear = dict[self.employeeId - 1]["graduationYear"] as? String{
                     self._gradYear = gradYear
                 }
-                if let description = dict["description"] as? String{
+                if let description = dict[self.employeeId - 1]["description"] as? String{
                     self._description = description
                 }
-                if let housing = dict["mediaIndustry"] as? String{
+                if let housing = dict[self.employeeId - 1]["housing"] as? String{
                     self._housing = housing
                 }
-                if let contactInfo = dict["email"] as? String{
+                if let contactInfo = dict[self.employeeId - 1]["email"] as? String{
                     self._contactInfo = contactInfo
                 }
                 
-                if let needSkills = dict["skillsNeeded"] as? Dictionary<String, AnyObject>{
+                if let needSkills = dict[self.employeeId - 1]["skillsNeeded"] as? Dictionary<String, AnyObject>{
                     if let need1 = needSkills["needed1"] as? String{
                         self._skill1 = need1
                     }
@@ -172,7 +185,7 @@ class Name{
                     }
                 }
                 
-                if let gainSkills = dict["skillsGained"] as? Dictionary<String, AnyObject>{
+                if let gainSkills = dict[self.employeeId - 1]["skillsGained"] as? Dictionary<String, AnyObject>{
                     if let gain1 = gainSkills["gained1"] as? String{
                         self._skilla = gain1
                     }
@@ -186,6 +199,7 @@ class Name{
                 
             }
             completed()
+
     }
 
    /*
@@ -250,7 +264,6 @@ class Name{
     }
 */
 
-    
     }
 }
 

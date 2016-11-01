@@ -40,8 +40,9 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
             for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
                 
                 let mifiName2 = anItem["name"] as! String
+                let mifiId = anItem["employeeId"] as! Int
                 
-                let newName = Name(mifiName: mifiName2)
+                let newName = Name(mifiName: mifiName2, mifiId: mifiId)
                 nameOfMifi.append(newName)
                 //print("Name: \(newName)")
 
@@ -91,6 +92,7 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
             name = nameOfMifi[indexPath.row]
         }
         
+        print(name.mifiName)
         performSegueWithIdentifier("NamePush", sender: name)
         
     }
@@ -125,7 +127,7 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "DetailNameVC"{
+        if segue.identifier == "NamePush"{
             if let detailsVC = segue.destinationViewController as? DetailNameVC{
                 if let name = sender as? Name{
                     detailsVC.name = name
