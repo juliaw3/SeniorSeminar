@@ -202,68 +202,6 @@ class Name{
 
     }
 
-   /*
-    
-    //PLEASE WORK :) instead of using Alamofire... I am hoping parsing the JSON this way will also work on the detail pages
-    func parseMainJSON(completed: DownloadComplete){
-        do{
-            let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
-            
-            let jsonResult = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-            
-            for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
-                
-                if let name = anItem["name"] as? String{
-                    self._mifiName = name
-                }
-                if let company = anItem["company"] as? String{
-                    self._company = company
-                }
-                if let mediaIndustry = anItem["mediaIndustry"] as? String{
-                    self._mediaIndustry = mediaIndustry
-                }
-                if let location = anItem["mediaIndustry"] as? String{
-                    self._location = location
-                }
-                if let gradYear = anItem["graduationYear"] as? String{
-                    self._gradYear = gradYear
-                }
-                if let description = anItem["description"] as? String{
-                    self._description = description
-                }
-                if let housing = anItem["mediaIndustry"] as? String{
-                    self._housing = housing
-                }
-                if let contactInfo = anItem["email"] as? String{
-                    self._contactInfo = contactInfo
-                }
-                if let skill1 = anItem["needed1"] as? String{
-                    self._skill1 = skill1
-                }
-                if let skill2 = anItem["needed2"] as? String{
-                    self._skill2 = skill2
-                }
-                if let skill3 = anItem["needed3"] as? String{
-                    self._skill3 = skill3
-                }
-                if let skilla = anItem["gained1"] as? String{
-                    self._skilla = skilla
-                }
-                if let skillb = anItem["gainedb"] as? String{
-                    self._skillb = skillb
-                }
-                if let skillc = anItem["gainedc"] as? String{
-                    self._skillc = skillc
-                }
-                
-            }
-        }
-        catch let error as NSError{
-            print(error.debugDescription)
-        }
-    }
-*/
-
     }
 }
 

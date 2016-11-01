@@ -40,8 +40,9 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
             for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
                 
                 let companyName2 = anItem["company"] as! String
+                let mifiId = anItem["employeeId"] as! Int
                 
-                let newCompany = Company(companyName: companyName2)
+                let newCompany = Company(companyName: companyName2, mifiId: mifiId)
                 companyOfMifi.append(newCompany)
                 
             }
@@ -120,6 +121,15 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
             filteredSearch = companyOfMifi.filter({$0.companyName.rangeOfString(lower) != nil})
             table2.reloadData()
             
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CompanyPush"{
+            if let detailsVC = segue.destinationViewController as? DetailNameVC{
+                if let company = sender as? Company{
+                    detailsVC.company = company
+                }
+            }
         }
     }
 

@@ -511,7 +511,6 @@
                                                 <connections>
                                                     <outlet property="blockImage" destination="Ymm-vM-3wy" id="HYk-2R-6qz"/>
                                                     <outlet property="companyLabel" destination="W5j-zB-6KX" id="TS4-Lf-IDd"/>
-                                                    <segue destination="vgz-L8-Reo" kind="show" identifier="CompanyPush" id="uyG-eq-5Hg"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -541,6 +540,7 @@
                     <connections>
                         <outlet property="searchbar" destination="J3J-oi-Awg" id="cGb-Nd-c5x"/>
                         <outlet property="table2" destination="opj-2s-x0s" id="sO4-Ou-jUh"/>
+                        <segue destination="l4e-5d-SWj" kind="show" identifier="CompanyPush" id="yA2-Au-49a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vr-Zp-ASa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2594,5 +2594,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Drq-yp-2yj"/>
+        <segue reference="yA2-Au-49a"/>
     </inferredMetricsTieBreakers>
 </document>

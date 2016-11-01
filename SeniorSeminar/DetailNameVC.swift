@@ -27,12 +27,17 @@ class DetailNameVC: UIViewController {
     
     
     var name: Name!
+    var company: Company!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         name.downloadContactDetails { () -> () in
             self.updateUI()
+        }
+*/
+        company.downloadContactDetails2 { () -> () in
+            self.updateUI2()
         }
     }
     
@@ -56,6 +61,24 @@ class DetailNameVC: UIViewController {
         need2.text = name.skill2
         need3.text = name.skill3
     }
+    
+    func updateUI2(){
+        nameLbl.text = company.mifiName
+        companyLbl.text = company.companyName
+        industryLbl.text = company.mediaIndustry
+        locationLbl.text = company.location
+        gradLbl.text = company.gradYear
+        descriptionLbl.text = company.description
+        housingLbl.text = company.housing
+        contactLbl.text = company.contactInfo
+        gain1.text = company.skilla
+        gain2.text = company.skillb
+        gain3.text = company.skillc
+        need1.text = company.skill1
+        need2.text = company.skill2
+        need3.text = company.skill3
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
