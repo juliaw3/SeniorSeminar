@@ -29,6 +29,9 @@ class IndustryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         parseJSON()
     }
     
+    ////////////////
+    //parse the main JSON for the main view controller
+    
     func parseJSON(){
         do{
             let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
@@ -37,79 +40,22 @@ class IndustryDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             
             for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
                 
-                let mifiIndustry = anItem["mediaIndustry"] as! String!
-                if mifiIndustry == "Newspaper"{
-                    let mediaIndustry = anItem["name"] as! String
+                let industry = anItem["mediaIndustry"] as! String
+                if industry == "Newspaper" {
+                    let mifiIndustry = anItem["name"] as! String
                     let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
+                    let newIndustry = Industry(industryName: mifiIndustry, mifiId: mifiId)
+                    industryOfMifi.append(newIndustry)
                 }
-                else if mifiIndustry == "Magazine"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Television"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Film"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Radio"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Social Media"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Public Relations"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Marketing"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Publishing"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Interactive Media"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
-                else if mifiIndustry == "Other"{
-                    let mediaIndustry = anItem["name"] as! String
-                    let mifiId = anItem["employeeId"] as! Int
-                    let newContact = Industry(industryName: mediaIndustry, mifiId: mifiId)
-                    industryOfMifi.append(newContact)
-                }
+                
             }
         }
         catch let error as NSError{
             print(error.debugDescription)
         }
     }
+    
+    /////////////////////////
     
     
     @IBAction func BtnPressed(sender: AnyObject) {

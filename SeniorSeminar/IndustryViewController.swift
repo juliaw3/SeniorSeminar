@@ -96,7 +96,7 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
         else{
             industry = industryOfMifi[indexPath.row]
         }
-    
+    //try putting if statements here. if the newspaper button is pressed, perform segue with NewsPush
         performSegueWithIdentifier("IndustryPush", sender: industry)
     }
     
@@ -129,6 +129,7 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
     }
+    //try putting if statements here. if the newspaper button is pressed, perform segue with NewsPush
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "IndustryPush"{
             if let detailsVC = segue.destinationViewController as? IndustryDetailVC{
