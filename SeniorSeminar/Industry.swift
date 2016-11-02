@@ -12,12 +12,17 @@ class Industry{
     //add any additional fields in this same way... all will need to be declared with
     //private, accessed with a var/return statement, and initalized if it is a required field
     private var _industryName: String!
+    private var _employeeId: Int!
     
     var industryName: String{
         return _industryName
     }
+    var employeeId: Int{
+        return _employeeId
+    }
     
-    init (industryName: String){
+    init (industryName: String, mifiId: Int){
         self._industryName = industryName
+        self._employeeId = mifiId
     }
 }

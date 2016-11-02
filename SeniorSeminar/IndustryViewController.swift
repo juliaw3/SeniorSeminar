@@ -8,16 +8,22 @@
 
 import UIKit
 
-class IndustryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class IndustryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     @IBOutlet weak var table3: UITableView!
+    @IBOutlet weak var searchbar: UISearchBar!
     
     var industryOfMifi = [Industry]()
+    
+    var inSearch = false
+    var filteredSearch = [Industry]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         table3.delegate = self
         table3.dataSource = self
+        searchbar.delegate = self
+        searchbar.returnKeyType = UIReturnKeyType.Done
         
         parseJSON()
     }
@@ -36,10 +42,12 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
             for anItem in jsonResult as! [Dictionary<String, AnyObject>]{
                 
                 let mifiIndustry2 = anItem["mediaIndustry"] as! String
+                let mifiId = anItem["employeeId"] as! Int
+                
                 if !(industrySet.contains(mifiIndustry2)){
                     industrySet.insert(mifiIndustry2)
                     
-                    let newIndustry = Industry(industryName: mifiIndustry2)
+                    let newIndustry = Industry(industryName: mifiIndustry2, mifiId: mifiId)
                     industryOfMifi.append(newIndustry)
                 }
             }
@@ -61,21 +69,41 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
         if let cell = tableView.dequeueReusableCellWithIdentifier("IndustryCell", forIndexPath: indexPath)as? IndustryCell{
             
             let industry: Industry!
-            industry = industryOfMifi[indexPath.row]
+            
+            if inSearch{
+                industry = filteredSearch[indexPath.row]
+            }
+            else{
+                industry = industryOfMifi[indexPath.row]
+            }
+            
             cell.configureCell(industry)
             return cell
             
         } else{
             return UITableViewCell()
         }
+
         
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var industry: Industry!
         
+        if inSearch{
+            industry = filteredSearch[indexPath.row]
+        }
+        else{
+            industry = industryOfMifi[indexPath.row]
+        }
+    
+        performSegueWithIdentifier("IndustryPush", sender: industry)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if inSearch{
+            return filteredSearch.count
+        }
         return 9
     }
     
@@ -84,11 +112,39 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
         return 1
     }
     
-    //might not need this one?
-    /*
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-    return CG
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
     }
-    */
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String){
+        if searchbar.text == nil || searchbar.text == ""{
+            inSearch = false
+            view.endEditing(true)
+            table3.reloadData()
+        }
+        else{
+            inSearch = true
+            let lower = searchBar.text!
+            filteredSearch = industryOfMifi.filter({$0.industryName.rangeOfString(lower) != nil})
+            table3.reloadData()
+            
+        }
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "IndustryPush"{
+            if let detailsVC = segue.destinationViewController as? IndustryDetailVC{
+                if let industry = sender as? Industry{
+                    
+                    detailsVC.industry = industry
+                }
+                
+            }
+        }
+    }
     
 }
+
+
+
+
+
+
