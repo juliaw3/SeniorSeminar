@@ -16,7 +16,7 @@ class IndustryCell: UITableViewCell {
     
     func configureCell(industry: Industry){
         self.industry = industry
-        industryLabel.text = self.industry.industryName.capitalizedString
+        industryLabel.text = self.industry.mediaIndustry.capitalizedString
     }
     
 }

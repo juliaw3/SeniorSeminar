@@ -96,15 +96,16 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
         else{
             industry = industryOfMifi[indexPath.row]
         }
-    //try putting if statements here. if the newspaper button is pressed, perform segue with NewsPush
         performSegueWithIdentifier("IndustryPush", sender: industry)
     }
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if inSearch{
             return filteredSearch.count
         }
-        return 9
+        return 11
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -124,7 +125,7 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
         else{
             inSearch = true
             let lower = searchBar.text!
-            filteredSearch = industryOfMifi.filter({$0.industryName.rangeOfString(lower) != nil})
+            filteredSearch = industryOfMifi.filter({$0.mediaIndustry.rangeOfString(lower) != nil})
             table3.reloadData()
             
         }
