@@ -13,6 +13,9 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
+    @IBOutlet weak var goldbtn: UIButton!
+    @IBOutlet weak var silvbtn: UIButton!
+    
     var inSearch = false
     var filteredSearch = [Name]()
     
@@ -57,10 +60,92 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
             }
         })
+        goldbtn.hidden = false
+        silvbtn.hidden = true
         task.resume()
     }
 
     /////////////////////////
+    
+    @IBAction func favtBtn(sender: AnyObject){
+        dispatch_async(dispatch_get_main_queue()) {
+            self.nameOfMifi.removeAll()
+            self.table.reloadData()
+        }
+            let session = NSURLSession.sharedSession()
+            let url = NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!
+            let task = session.dataTaskWithURL(url, completionHandler: {
+                (data, response, error) -> Void in
+                if error != nil {
+                    return
+                }
+                
+                if let jsonResult = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [Dictionary<String, AnyObject>] {
+                    
+                    for anItem in jsonResult! {
+                        
+                        let mifiName2 = anItem["name"] as! String
+                        let mifiId = anItem["employeeId"] as! Int
+                        let favorite = anItem["favorite"] as! Bool
+                        
+                        let newName = Name(mifiName: mifiName2, mifiId: mifiId)
+                        if favorite == true{
+                            self.nameOfMifi.append(newName)
+                        }
+                        //print("Name: \(newName)")
+                    }
+                    //Now you need to sort your array on the basis of name like this
+                    self.nameOfMifi.sortInPlace { $0.mifiName < $1.mifiName }
+                    
+                    //Now reload tableView on main thread.
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.table.reloadData()
+                    }
+                }
+            })
+            goldbtn.hidden = true
+            silvbtn.hidden = false
+            task.resume()
+    }
+    
+    @IBAction func favtBtn2(sender: AnyObject){
+        dispatch_async(dispatch_get_main_queue()) {
+            self.nameOfMifi.removeAll()
+            self.table.reloadData()
+        }
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!
+        let task = session.dataTaskWithURL(url, completionHandler: {
+            (data, response, error) -> Void in
+            if error != nil {
+                return
+            }
+            
+            if let jsonResult = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [Dictionary<String, AnyObject>] {
+                
+                for anItem in jsonResult! {
+                    
+                    let mifiName2 = anItem["name"] as! String
+                    let mifiId = anItem["employeeId"] as! Int
+                    
+                    let newName = Name(mifiName: mifiName2, mifiId: mifiId)
+                    self.nameOfMifi.append(newName)
+                }
+                //Now you need to sort your array on the basis of name like this
+                self.nameOfMifi.sortInPlace { $0.mifiName < $1.mifiName }
+                
+                //Now reload tableView on main thread.
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.table.reloadData()
+                }
+            }
+        })
+        goldbtn.hidden = false
+        silvbtn.hidden = true
+        task.resume()
+    }
+    
+    
     
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

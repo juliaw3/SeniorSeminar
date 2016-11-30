@@ -30,7 +30,6 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
     
     ////////////////
     //parse the main JSON for the main view controller
-    
     func parseJSON(){
         do{
             let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
