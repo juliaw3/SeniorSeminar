@@ -40,6 +40,7 @@
 		5F3D07F71DAF22DE005C1975 /* Napapiiri.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07F61DAF22DE005C1975 /* Napapiiri.ttf */; };
 		5F3D07F91DAF2339005C1975 /* Iam.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3D07F81DAF2339005C1975 /* Iam.ttf */; };
 		5F3D07FB1DAF3CE5005C1975 /* TimelineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */; };
+		5F7B18F61DEE8BFE00559325 /* FavoriteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7B18F51DEE8BFE00559325 /* FavoriteVC.swift */; };
 		5FB987181D8D8D430052AC6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987171D8D8D430052AC6D /* AppDelegate.swift */; };
 		5FB9871A1D8D8D430052AC6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB987191D8D8D430052AC6D /* ViewController.swift */; };
 		5FB9871D1D8D8D430052AC6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FB9871B1D8D8D430052AC6D /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		5F3D07F61DAF22DE005C1975 /* Napapiiri.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Napapiiri.ttf; sourceTree = "<group>"; };
 		5F3D07F81DAF2339005C1975 /* Iam.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Iam.ttf; sourceTree = "<group>"; };
 		5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDetailVC.swift; sourceTree = "<group>"; };
+		5F7B18F51DEE8BFE00559325 /* FavoriteVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteVC.swift; sourceTree = "<group>"; };
 		5FB987141D8D8D430052AC6D /* SeniorSeminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeniorSeminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB987171D8D8D430052AC6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5FB987191D8D8D430052AC6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				5F3D07E51DAD3656005C1975 /* TimelineViewController.swift */,
 				5F3D07FA1DAF3CE5005C1975 /* TimelineDetailVC.swift */,
 				5FB987191D8D8D430052AC6D /* ViewController.swift */,
+				5F7B18F51DEE8BFE00559325 /* FavoriteVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				5F28A09C1DC1A93B000FD227 /* LocationDetailAsiaVC.swift in Sources */,
 				5F2DDCE91D9F4F2300AE2C83 /* Name.swift in Sources */,
 				5FB9871A1D8D8D430052AC6D /* ViewController.swift in Sources */,
+				5F7B18F61DEE8BFE00559325 /* FavoriteVC.swift in Sources */,
 				5F3D07EC1DAD8BAA005C1975 /* LocationDetailVC.swift in Sources */,
 				5F3D07E81DAD8A0D005C1975 /* Location.swift in Sources */,
 				5F28A09A1DC1A900000FD227 /* LocationDetailEUVC.swift in Sources */,

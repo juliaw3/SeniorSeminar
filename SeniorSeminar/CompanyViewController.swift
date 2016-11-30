@@ -30,7 +30,7 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     ////////////////
     //parse the main JSON for the main view controller
-    
+    /*
     func parseJSON(){
         do{
             let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
@@ -50,6 +50,38 @@ class CompanyViewController: UIViewController, UITableViewDelegate, UITableViewD
         catch let error as NSError{
             print(error.debugDescription)
         }
+    }
+*/
+    func parseJSON(){
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!
+        let task = session.dataTaskWithURL(url, completionHandler: {
+            (data, response, error) -> Void in
+            if error != nil {
+                return
+            }
+            
+            if let jsonResult = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [Dictionary<String, AnyObject>] {
+                
+                for anItem in jsonResult! {
+                    
+                    let companyName2 = anItem["company"] as! String
+                    let mifiId = anItem["employeeId"] as! Int
+                    
+                    let newCompany = Company(companyName: companyName2, mifiId: mifiId)
+                    self.companyOfMifi.append(newCompany)
+                    //print("Name: \(newName)")
+                }
+                //Now you need to sort your array on the basis of name like this
+                self.companyOfMifi.sortInPlace { $0.companyName < $1.companyName }
+                
+                //Now reload tableView on main thread.
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.table2.reloadData()
+                }
+            }
+        })
+        task.resume()
     }
     
     /////////////////////////

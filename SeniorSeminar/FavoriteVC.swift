@@ -1,15 +1,16 @@
 //
-//  NameViewController.swift
+//  FavoriteVC.swift
 //  SeniorSeminar
 //
-//  Created by Julia Waggoner on 10/1/16.
+//  Created by Julia Waggoner on 11/29/16.
 //  Copyright © 2016 Julia Waggoner. All rights reserved.
 //
 
+
 import UIKit
 
-class NameViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate  {
-
+class FavoriteVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate  {
+    
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
     
@@ -43,9 +44,12 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                     let mifiName2 = anItem["name"] as! String
                     let mifiId = anItem["employeeId"] as! Int
+                    let favorite = anItem["favorite"] as! Bool
                     
                     let newName = Name(mifiName: mifiName2, mifiId: mifiId)
-                    self.nameOfMifi.append(newName)
+                    if favorite == true{
+                        self.nameOfMifi.append(newName)
+                    }
                     //print("Name: \(newName)")
                 }
                 //Now you need to sort your array on the basis of name like this
@@ -59,7 +63,7 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
         task.resume()
     }
-
+    
     /////////////////////////
     
     @IBAction func btnPressed(sender: AnyObject) {
@@ -113,7 +117,7 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         view.endEditing(true)
     }
@@ -132,14 +136,5 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "NamePush"{
-            if let detailsVC = segue.destinationViewController as? DetailNameVC{
-                if let name = sender as? Name{
-                    detailsVC.name = name
-                }
-            }
-        }
-    }
-
+    
 }

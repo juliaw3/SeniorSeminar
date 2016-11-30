@@ -29,6 +29,7 @@ class Name{
     //private var _recommend: Bool!
     private var _contactInfo: String!
     private var _employeeId: Int!
+    private var _favorite: Bool!
     
     var employeeId: Int{
         return _employeeId
@@ -131,6 +132,12 @@ class Name{
         }
         return _contactInfo
     }
+    var favorite: Bool{
+        if _favorite == nil{
+            _favorite = false
+        }
+        return _favorite
+    }
     
     init (mifiName: String, mifiId: Int){
         self._mifiName = mifiName
@@ -171,6 +178,9 @@ class Name{
                 }
                 if let contactInfo = dict[self.employeeId - 1]["email"] as? String{
                     self._contactInfo = contactInfo
+                }
+                if let favorite = dict[self.employeeId - 1]["favorite"] as? Bool{
+                    self._favorite = favorite
                 }
                 
                 if let needSkills = dict[self.employeeId - 1]["skillsNeeded"] as? Dictionary<String, AnyObject>{

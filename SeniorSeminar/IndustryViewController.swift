@@ -56,6 +56,7 @@ class IndustryViewController: UIViewController, UITableViewDelegate, UITableView
             print(error.debugDescription)
         }
     }
+
     
     /////////////////////////
     

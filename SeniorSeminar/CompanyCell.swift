@@ -11,7 +11,7 @@ import UIKit
 class CompanyCell: UITableViewCell {
     
     @IBOutlet weak var companyLabel: UILabel!
-    @IBOutlet weak var blockImage: UIImageView!
+    
     
     var company: Company!
     
@@ -24,7 +24,7 @@ class CompanyCell: UITableViewCell {
     func configureCell(company: Company){
         self.company = company
         companyLabel.text = self.company.companyName.capitalizedString
-        blockImage.image = UIImage(named: "gold")
+        
     }
     
 }

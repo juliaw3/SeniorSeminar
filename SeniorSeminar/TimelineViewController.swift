@@ -28,17 +28,6 @@ class TimelineViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            month1Lbl.text = "August";
-            month2Lbl.text = "September";
-            month3Lbl.text = "October";
-            date1.text = "2nd"
-            date2.text = "14th"
-            date3.text = "28th"
-            date4.text = "7th"
-            date5.text = "22nd"
-            date6.text = "15th"
-            date7.text = "30th"
-        case 1:
             month1Lbl.text = "May";
             month2Lbl.text = "June";
             month3Lbl.text = "July";
@@ -49,6 +38,17 @@ class TimelineViewController: UIViewController {
             date5.text = "28th"
             date6.text = "9th"
             date7.text = "23rd"
+        case 1:
+            month1Lbl.text = "August";
+            month2Lbl.text = "September";
+            month3Lbl.text = "October";
+            date1.text = "2nd"
+            date2.text = "14th"
+            date3.text = "28th"
+            date4.text = "7th"
+            date5.text = "22nd"
+            date6.text = "15th"
+            date7.text = "30th"
         default:
             break;
         }

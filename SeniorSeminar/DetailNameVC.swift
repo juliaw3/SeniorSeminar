@@ -25,6 +25,9 @@ class DetailNameVC: UIViewController {
     @IBOutlet weak var need2: UILabel!
     @IBOutlet weak var need3: UILabel!
     
+    @IBOutlet weak var goldStarBtn: UIButton!
+    @IBOutlet weak var silverStarBtn: UIButton!
+    
     
     var name: Name!
     
@@ -55,6 +58,25 @@ class DetailNameVC: UIViewController {
         need1.text = name.skill1
         need2.text = name.skill2
         need3.text = name.skill3
+        
+        if name.favorite == true{
+            goldStarBtn.hidden = false
+            silverStarBtn.hidden = true
+            
+        }
+        else{
+            goldStarBtn.hidden = true
+            silverStarBtn.hidden = false
+        }
+    }
+    
+    @IBAction func silverBtn(sender: UIButton){
+        goldStarBtn.hidden = false
+        silverStarBtn.hidden = true
+    }
+    @IBAction func goldBtn(sender: UIButton){
+        goldStarBtn.hidden = true
+        silverStarBtn.hidden = false
     }
     
     override func didReceiveMemoryWarning() {

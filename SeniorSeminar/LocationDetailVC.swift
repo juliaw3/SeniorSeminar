@@ -27,7 +27,7 @@ class LocationDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         parseJSON()
     }
-    
+/*
     func parseJSON(){
         do{
             let data = NSData(contentsOfURL: NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!)
@@ -49,6 +49,42 @@ class LocationDetailVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             print(error.debugDescription)
         }
     }
+*/
+    func parseJSON(){
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: "https://jsonblob.com/api/jsonBlob/580d0ccce4b0bcac9f837fbe")!
+        let task = session.dataTaskWithURL(url, completionHandler: {
+            (data, response, error) -> Void in
+            if error != nil {
+                return
+            }
+            
+            if let jsonResult = try? NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as? [Dictionary<String, AnyObject>] {
+                
+                for anItem in jsonResult! {
+                    
+                    let mifiContinent = anItem["continent"] as! String
+                    if mifiContinent == "US"{
+                        let mifiLocation = anItem["location"] as! String
+                        let mifiId = anItem["employeeId"] as! Int
+                        let newLocation = Location(location: mifiLocation, mifiId: mifiId)
+                        self.locationOfMifi.append(newLocation)
+                    }
+                    
+                    
+                }
+                //Now you need to sort your array on the basis of name like this
+                self.locationOfMifi.sortInPlace { $0.location < $1.location }
+                
+                //Now reload tableView on main thread.
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.locationTable.reloadData()
+                }
+            }
+        })
+        task.resume()
+    }
+        
      
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
