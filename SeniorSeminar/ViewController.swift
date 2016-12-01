@@ -16,6 +16,20 @@ class ViewController: UIViewController{
 
     }
     
+    override func viewDidAppear(animated: Bool) {
+        let isUserLoggedIn = NSUserDefaults.standardUserDefaults().boolForKey("isUserLoggedIn")
+        if (!isUserLoggedIn){
+            self.performSegueWithIdentifier("loginView", sender: self)
+        }
+    }
+    
+    @IBAction func logoutPressed(sender: AnyObject){
+        
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "isUserLoggedIn")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        self.performSegueWithIdentifier("loginView", sender: self)
+    }
+    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "NamePush"){
