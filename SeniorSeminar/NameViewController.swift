@@ -149,6 +149,7 @@ class NameViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBAction func btnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
